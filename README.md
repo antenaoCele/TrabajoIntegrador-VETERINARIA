@@ -87,25 +87,22 @@ api-veterinaria/
 - **Parámetros:** id en URL
 
 #### POST /clientes
-- **Descripción: Crea un nuevo cliente.
-- **Body JSON:.
+- **Descripción:** Crea un nuevo cliente.
 
 #### PUT /clientes/:id
-- **Descripción: Actualiza un cliente existente.
-- **Parámetros: id en URL.
-- **Body JSON ejemplo:
+- **Descripción:** Actualiza un cliente existente.
+- **Parámetros:** id en URL.
+
 
 #### DELETE /clientes/:id
-- **Descripción: Elimina un cliente.
-- **Parámetros: id en URL.
+- **Descripción:** Elimina un cliente.
+- **Parámetros:** id en URL.
 
 ### Mascotas
 
 #### POST /mascotas
-- **Descripción: Crea una mascota asociada a un cliente.
-- **Body JSON ejemplo:
+- **Descripción:** Crea una mascota asociada a un cliente.
 
 #### GET /mascotas
-- **Descripción: Lista todas las mascotas o filtra por cliente.
-- **Parámetros opcionales: ?cliente_id=<ID_DEL_CLIENTE>
-- **Ejemplo de respuesta:
+- **Descripción:** Lista todas las mascotas o filtra por cliente.
+- **Parámetros opcionales:** ?cliente_id=<ID_DEL_CLIENTE>
