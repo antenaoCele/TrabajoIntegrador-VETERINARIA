@@ -4,7 +4,7 @@ GET http://localhost:5000/clientes
 
 
 ### Obtener cliente por id
-GET http://localhost:5000/clientes/68f1ad7d6d5242080bca116e
+GET http://localhost:5000/clientes/68f1b0c89952bc81e71d1597
 
 
 ### Obtener mascotas de un cliente
