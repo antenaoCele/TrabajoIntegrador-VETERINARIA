@@ -57,23 +57,6 @@ MONGO_URI=tu-cadena-de-conexión
 npm run dev
 
 
-## Estructura del Proyecto
-
-```bash
-api-veterinaria/
-├── models/           
-│   ├── Cliente.js   
-│   └── Mascota.js    
-├── routes/           
-│   ├── clientes.js   
-│   └── mascotas.js   
-├── controllers/      
-├── server.js         
-├── .env              
-├── package.json      
-└── README.md        
-
-
 ## API Endpoints
 
 ### Clientes
@@ -106,3 +89,22 @@ api-veterinaria/
 #### GET /mascotas
 - **Descripción:** Lista todas las mascotas o filtra por cliente.
 - **Parámetros opcionales:** ?cliente_id=<ID_DEL_CLIENTE>
+
+
+## Estructura del Proyecto
+
+```bash
+api-veterinaria/
+├── models/           
+│   ├── Cliente.js   
+│   └── Mascota.js    
+├── routes/           
+│   ├── clientes.js   
+│   └── mascotas.js   
+├── controllers/      
+├── server.js         
+├── .env              
+├── package.json      
+└── README.md        
+
+
