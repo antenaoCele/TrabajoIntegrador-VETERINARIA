@@ -3,10 +3,10 @@
 API con Node, Express y Mongoose para gestionar **clientes** y **mascotas**.
 
 ---
-# LINK DE VERCEL
+# Link de vercel
 trabajo-integrador-veterinaria-bf31.vercel.app
 
-# DEPLOYMENT
+# Deployment
 trabajo-integrador-veterinaria-bf31-om19p6m6v.vercel.app
 
 ## Descripción
@@ -76,12 +76,36 @@ api-veterinaria/
 
 ## API Endpoints
 
-| Método | Endpoint | Descripción | Parámetros / Body | Ejemplo de Body |
-| ------ | -------- | ----------- | ---------------- | --------------- |
-| GET    | `/clientes` | Lista todos los clientes | `?nombre=` (opcional, para filtrar) | - |
-| GET    | `/clientes/:id` | Obtiene un cliente por ID | `id` en URL | - |
-| POST   | `/clientes` | Crea un nuevo cliente | Body JSON | `{ "nombre": "María Pérez", "telefono": "+5491123456789", "email": "maria@example.com" }` |
-| PUT    | `/clientes/:id` | Actualiza un cliente existente | `id` en URL, Body JSON | `{ "telefono": "+5491198765432" }` |
-| DELETE | `/clientes/:id` | Elimina un cliente | `id` en URL | - |
-| POST   | `/mascotas` | Crea una mascota asociada a un cliente | Body JSON | `{ "nombre": "Firulais", "especie": "Perro", "raza": "Labrador", "edad": 3, "cliente_id": "ID_DEL_CLIENTE" }` |
-| GET    | `/mascotas?cliente_id=ID` | Filtra mascotas por cliente | `cliente_id` en query | - |
+### Clientes
+
+#### GET `/clientes`
+- **Descripción:** Lista todos los clientes.
+- **Parámetros opcionales:** `?nombre=<nombre>` (para filtrar).
+
+#### GET `/clientes/:id`
+- **Descripción:** Obtiene un cliente por su ID.
+- **Parámetros:** id en URL
+
+#### POST /clientes
+- **Descripción: Crea un nuevo cliente.
+- **Body JSON:.
+
+#### PUT /clientes/:id
+- **Descripción: Actualiza un cliente existente.
+- **Parámetros: id en URL.
+- **Body JSON ejemplo:
+
+#### DELETE /clientes/:id
+- **Descripción: Elimina un cliente.
+- **Parámetros: id en URL.
+
+### Mascotas
+
+#### POST /mascotas
+- **Descripción: Crea una mascota asociada a un cliente.
+- **Body JSON ejemplo:
+
+#### GET /mascotas
+- **Descripción: Lista todas las mascotas o filtra por cliente.
+- **Parámetros opcionales: ?cliente_id=<ID_DEL_CLIENTE>
+- **Ejemplo de respuesta:
