@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const connectDB = require('./db/connectDB');
+const connectDB = require('./config/db');
 const clienteRoutes = require('./routes/clientes');
 const mascotaRoutes = require('./routes/mascotas');
 
