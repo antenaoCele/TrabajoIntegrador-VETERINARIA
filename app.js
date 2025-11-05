@@ -1,31 +1,37 @@
-require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
+const connectDB = require('./db/connectDB');
+const clienteRoutes = require('./routes/clienteRoutes');
+const mascotaRoutes = require('./routes/mascotaRoutes');
+
 const app = express();
-const connectDB = require('./config/db');
+
+//CORS
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 
 app.use(express.json());
 
-
-app.use(async (req, res, next) => {
-    try {
-        await connectDB();
-        next();
-    } catch (err) {
-        res.status(500).json({ mensaje: 'Error al conectar a MongoDB', error: err.message });
-    }
-});
+// Conectar a la base de datos
+connectDB();
 
 // Rutas
-const clientesRouter = require('./routes/clientes');
-const mascotasRouter = require('./routes/mascotas');
-
-app.use('/clientes', clientesRouter);
-app.use('/mascotas', mascotasRouter);
+app.use('/clientes', clienteRoutes);
+app.use('/mascotas', mascotaRoutes);
 
 
 app.get('/', (req, res) => {
-    res.send({ mensaje: 'API Veterinaria funcionando' });
+    res.send('API de Veterinaria funcionando');
 });
 
 
-module.exports = app;
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en puerto ${PORT}`);
+});
+
+module.exports = app; 
