@@ -83,6 +83,16 @@ router.get('/', async (req, res) => {
 });
 
 
+// GET mascota por ID 
+router.get('/:id', async (req, res) => {
+    try {
+        const mascota = await Mascota.findById(req.params.id).populate('cliente_id', 'nombre email telefono');
+        if (!mascota) return res.status(404).json({ mensaje: 'Mascota no encontrada' });
+        res.json(mascota);
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al obtener mascota', error: error.message });
+    }
+});
 
 
 module.exports = router;
